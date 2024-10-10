@@ -1,0 +1,42 @@
+.app-profile {
+  padding: 10px;
+}
+
+.repos-list {
+  padding: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem
+}
+
+.repo-list-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.repo-url[aria-hidden='true'] {
+  visibility: hidden;
+  height: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.repo-url[aria-hidden='false'] {
+  visibility: visible;
+  height: auto;
+}
+
+
+.repo-url[aria-hidden='true'] > a {
+  display: inline-block;
+  visibility: hidden;
+  height: 0;
+}
+
+
+.repo-url[aria-hidden='false'] > a {
+  display: inline-block;
+  visibility: visible;
+  height: auto;
+}
