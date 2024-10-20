@@ -38,9 +38,24 @@ export class AppRoot {
   render() {
     return (
       <div>
-        <header>
-          <h1>Stencil App Starter</h1>
-        </header>
+        {this.isLoggedIn && <auth-route-links user={this.user} isLogged={this.isLoggedIn}></auth-route-links>}
+        <public-route-links isLogged={this.isLoggedIn}></public-route-links>
+        {this.errors &&  (
+          <div>
+            <ul>
+              {
+                this.errors.errors.map(e => {
+                  return (
+                    <li>
+                      <p>{e.message}</p>
+                      {e.field && <p>{e.field}</p>}
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        )}
 
         <main>
           <stencil-router>
