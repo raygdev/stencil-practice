@@ -1,0 +1,54 @@
+.form-control, form, .form-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    gap: 1em
+}
+
+.form-control {
+    min-height: 40vh;
+}
+
+form {
+    gap: 1em;
+    width: 400px;
+    margin: auto;
+}
+
+.form-label > input {
+    padding: .45rem .75rem;
+    border-radius: .25rem;
+    outline-width: .3rem;
+    outline-color: rgba(23, 84, 196, 0.412);
+    border: none;
+    border: 1px solid rgba(112, 128, 144, 0.397)
+}
+
+.btn {
+    align-self: center;
+    border: none;
+    background-color: rgba(23, 83, 196, 0.8);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.349);
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.btn:disabled {
+    background-color: rgba(23, 84, 196, 0.492);
+}
+
+.btn:active {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.349);
+}
+
+.error {
+    margin: 0;
+    color: rgba(209, 15, 15, 0.96);
+    margin-top: .25rem;
+}
