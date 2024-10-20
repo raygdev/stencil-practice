@@ -1,0 +1,105 @@
+.nav-list {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 1rem
+}
+.nav {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    text-decoration: none;
+    color: white
+}
+
+
+header {
+    /* position: sticky; */
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    z-index: 1;
+}
+.badge {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: slategray;
+    color: white;
+    clip-path: circle(40%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: baseline;
+}
+
+/* .badge:focus {
+    outline-color: black;
+    outline-width: 1px;
+} */
+
+
+.wrapper {
+    display: flex;
+    position: 'relative';
+}
+
+.button-wrapper {
+ display: flex;
+ position: relative;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 1em;
+}
+
+.close-btn, .logout-btn {
+    border: none;
+    background-color: transparent;
+    color: black
+}
+
+.close-btn {
+  top: 0;
+  align-self: flex-end;
+  /* border: 1px solid blue */
+}
+
+/* .close-btn:focus {
+    outline: none;
+    outline-color: rgba(17, 17, 246, 0.683);
+} */
+
+.close-btn:focus-visible {
+    outline: auto;
+}
+
+
+.logout-btn {
+
+}
+
+.pop-over {
+    position: absolute;
+    display: none;
+    background-color: rgb(244, 241, 241);
+    transform: translateX(-98%);
+    left: 98%;
+    top: 40px;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+    opacity: 0;
+    /* transition: opacity 1s ease-in-out; */
+}
+
+.pop-over.active {
+    display: block;
+    opacity: 1;
+}
+
