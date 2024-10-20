@@ -5,12 +5,38 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { unknown as IUser } from "./components";
 import { MatchResults } from "@stencil-community/router";
+import { IUser as IUser1 } from "./api/users/user-service";
+export { unknown as IUser } from "./components";
 export { MatchResults } from "@stencil-community/router";
+export { IUser as IUser1 } from "./api/users/user-service";
 export namespace Components {
     interface AppHome {
     }
     interface AppRoot {
+    }
+    interface AuthRouteLinks {
+        "isLogged": boolean;
+        "user": IUser;
+    }
+    interface PopOver {
+        "ariaLive": boolean;
+        "classes": string;
+        "isVisible": boolean;
+        "triggerElement": HTMLButtonElement;
+    }
+    interface PostCreate {
+    }
+    interface PostInfo {
+        "id": any;
+    }
+    interface PostsInfo {
+    }
+    interface ProfileRoute {
+    }
+    interface PublicRouteLinks {
+        "isLogged": boolean;
     }
     interface RepoListItem {
         "name": string;
@@ -19,6 +45,19 @@ export namespace Components {
     }
     interface ReposProfile {
         "match": MatchResults;
+    }
+    interface SigninForm {
+        "push": (url: string) => void;
+        "seterrors": (e: any) => void;
+    }
+    interface SigninRoute {
+        "push": (url: string) => void;
+        "seterrors": (e: any) => void;
+    }
+    interface SignupRoute {
+    }
+    interface UserRoute {
+        "user": IUser1;
     }
 }
 declare global {
@@ -34,6 +73,48 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLAuthRouteLinksElement extends Components.AuthRouteLinks, HTMLStencilElement {
+    }
+    var HTMLAuthRouteLinksElement: {
+        prototype: HTMLAuthRouteLinksElement;
+        new (): HTMLAuthRouteLinksElement;
+    };
+    interface HTMLPopOverElement extends Components.PopOver, HTMLStencilElement {
+    }
+    var HTMLPopOverElement: {
+        prototype: HTMLPopOverElement;
+        new (): HTMLPopOverElement;
+    };
+    interface HTMLPostCreateElement extends Components.PostCreate, HTMLStencilElement {
+    }
+    var HTMLPostCreateElement: {
+        prototype: HTMLPostCreateElement;
+        new (): HTMLPostCreateElement;
+    };
+    interface HTMLPostInfoElement extends Components.PostInfo, HTMLStencilElement {
+    }
+    var HTMLPostInfoElement: {
+        prototype: HTMLPostInfoElement;
+        new (): HTMLPostInfoElement;
+    };
+    interface HTMLPostsInfoElement extends Components.PostsInfo, HTMLStencilElement {
+    }
+    var HTMLPostsInfoElement: {
+        prototype: HTMLPostsInfoElement;
+        new (): HTMLPostsInfoElement;
+    };
+    interface HTMLProfileRouteElement extends Components.ProfileRoute, HTMLStencilElement {
+    }
+    var HTMLProfileRouteElement: {
+        prototype: HTMLProfileRouteElement;
+        new (): HTMLProfileRouteElement;
+    };
+    interface HTMLPublicRouteLinksElement extends Components.PublicRouteLinks, HTMLStencilElement {
+    }
+    var HTMLPublicRouteLinksElement: {
+        prototype: HTMLPublicRouteLinksElement;
+        new (): HTMLPublicRouteLinksElement;
+    };
     interface HTMLRepoListItemElement extends Components.RepoListItem, HTMLStencilElement {
     }
     var HTMLRepoListItemElement: {
@@ -46,17 +127,74 @@ declare global {
         prototype: HTMLReposProfileElement;
         new (): HTMLReposProfileElement;
     };
+    interface HTMLSigninFormElement extends Components.SigninForm, HTMLStencilElement {
+    }
+    var HTMLSigninFormElement: {
+        prototype: HTMLSigninFormElement;
+        new (): HTMLSigninFormElement;
+    };
+    interface HTMLSigninRouteElement extends Components.SigninRoute, HTMLStencilElement {
+    }
+    var HTMLSigninRouteElement: {
+        prototype: HTMLSigninRouteElement;
+        new (): HTMLSigninRouteElement;
+    };
+    interface HTMLSignupRouteElement extends Components.SignupRoute, HTMLStencilElement {
+    }
+    var HTMLSignupRouteElement: {
+        prototype: HTMLSignupRouteElement;
+        new (): HTMLSignupRouteElement;
+    };
+    interface HTMLUserRouteElement extends Components.UserRoute, HTMLStencilElement {
+    }
+    var HTMLUserRouteElement: {
+        prototype: HTMLUserRouteElement;
+        new (): HTMLUserRouteElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
+        "auth-route-links": HTMLAuthRouteLinksElement;
+        "pop-over": HTMLPopOverElement;
+        "post-create": HTMLPostCreateElement;
+        "post-info": HTMLPostInfoElement;
+        "posts-info": HTMLPostsInfoElement;
+        "profile-route": HTMLProfileRouteElement;
+        "public-route-links": HTMLPublicRouteLinksElement;
         "repo-list-item": HTMLRepoListItemElement;
         "repos-profile": HTMLReposProfileElement;
+        "signin-form": HTMLSigninFormElement;
+        "signin-route": HTMLSigninRouteElement;
+        "signup-route": HTMLSignupRouteElement;
+        "user-route": HTMLUserRouteElement;
     }
 }
 declare namespace LocalJSX {
     interface AppHome {
     }
     interface AppRoot {
+    }
+    interface AuthRouteLinks {
+        "isLogged"?: boolean;
+        "user"?: IUser;
+    }
+    interface PopOver {
+        "ariaLive"?: boolean;
+        "classes"?: string;
+        "isVisible"?: boolean;
+        "triggerElement"?: HTMLButtonElement;
+    }
+    interface PostCreate {
+    }
+    interface PostInfo {
+        "id"?: any;
+    }
+    interface PostsInfo {
+    }
+    interface ProfileRoute {
+    }
+    interface PublicRouteLinks {
+        "isLogged"?: boolean;
     }
     interface RepoListItem {
         "name"?: string;
@@ -66,11 +204,35 @@ declare namespace LocalJSX {
     interface ReposProfile {
         "match"?: MatchResults;
     }
+    interface SigninForm {
+        "push"?: (url: string) => void;
+        "seterrors"?: (e: any) => void;
+    }
+    interface SigninRoute {
+        "push"?: (url: string) => void;
+        "seterrors"?: (e: any) => void;
+    }
+    interface SignupRoute {
+    }
+    interface UserRoute {
+        "user"?: IUser1;
+    }
     interface IntrinsicElements {
         "app-home": AppHome;
         "app-root": AppRoot;
+        "auth-route-links": AuthRouteLinks;
+        "pop-over": PopOver;
+        "post-create": PostCreate;
+        "post-info": PostInfo;
+        "posts-info": PostsInfo;
+        "profile-route": ProfileRoute;
+        "public-route-links": PublicRouteLinks;
         "repo-list-item": RepoListItem;
         "repos-profile": ReposProfile;
+        "signin-form": SigninForm;
+        "signin-route": SigninRoute;
+        "signup-route": SignupRoute;
+        "user-route": UserRoute;
     }
 }
 export { LocalJSX as JSX };
@@ -79,8 +241,19 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "auth-route-links": LocalJSX.AuthRouteLinks & JSXBase.HTMLAttributes<HTMLAuthRouteLinksElement>;
+            "pop-over": LocalJSX.PopOver & JSXBase.HTMLAttributes<HTMLPopOverElement>;
+            "post-create": LocalJSX.PostCreate & JSXBase.HTMLAttributes<HTMLPostCreateElement>;
+            "post-info": LocalJSX.PostInfo & JSXBase.HTMLAttributes<HTMLPostInfoElement>;
+            "posts-info": LocalJSX.PostsInfo & JSXBase.HTMLAttributes<HTMLPostsInfoElement>;
+            "profile-route": LocalJSX.ProfileRoute & JSXBase.HTMLAttributes<HTMLProfileRouteElement>;
+            "public-route-links": LocalJSX.PublicRouteLinks & JSXBase.HTMLAttributes<HTMLPublicRouteLinksElement>;
             "repo-list-item": LocalJSX.RepoListItem & JSXBase.HTMLAttributes<HTMLRepoListItemElement>;
             "repos-profile": LocalJSX.ReposProfile & JSXBase.HTMLAttributes<HTMLReposProfileElement>;
+            "signin-form": LocalJSX.SigninForm & JSXBase.HTMLAttributes<HTMLSigninFormElement>;
+            "signin-route": LocalJSX.SigninRoute & JSXBase.HTMLAttributes<HTMLSigninRouteElement>;
+            "signup-route": LocalJSX.SignupRoute & JSXBase.HTMLAttributes<HTMLSignupRouteElement>;
+            "user-route": LocalJSX.UserRoute & JSXBase.HTMLAttributes<HTMLUserRouteElement>;
         }
     }
 }
