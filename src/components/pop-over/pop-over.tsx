@@ -1,4 +1,4 @@
-import { Component, h, State, Prop, Element } from "@stencil/core";
+import { Component, h, Prop, Element } from "@stencil/core";
 
 @Component({
     tag: 'pop-over',
