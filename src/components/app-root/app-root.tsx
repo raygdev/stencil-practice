@@ -58,12 +58,54 @@ export class AppRoot {
         )}
 
         <main>
-          <stencil-router>
-            <stencil-route-switch scrollTopOffset={0}>
-              <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/profile/:name" component="repos-profile" />
-            </stencil-route-switch>
-          </stencil-router>
+          <Router.Switch>
+              <Route path={'/'}>
+                <app-home></app-home>
+                <a {...href('/signin')}>Sign In</a>
+                <a {...href('/signup')}>Sign Up</a>
+              </Route>
+              <Route path={'/signin'}>
+                <signin-route push={Router.push} seterrors={this.setErrors}></signin-route>
+              </Route>
+              <Route path={'/signup'}>
+                <signup-route></signup-route>
+              </Route>
+              {this.isLoggedIn &&
+              <Route path={'/user'} render={() => {
+                return <user-route user={this.user} ></user-route>
+              }} />
+              ||
+              <Route path={'/user'} to={'/signin'} />
+              }
+              {this.isLoggedIn &&
+              <Route path={'/profile'}  render={() => {
+                return <profile-route></profile-route>
+              }} />
+              ||
+              <Route path={'/profile'} to={'/signin'} />
+              }
+              {this.isLoggedIn &&
+              <Route path={'/posts'} render={() => {
+                return <posts-info></posts-info>
+              }} />
+              ||
+              <Route path={'/posts'} to={"/signin"} />
+              }
+              {this.isLoggedIn &&
+              <Route path={'/posts/create'} render={() => {
+                return <post-create></post-create>
+              }}/>
+              ||
+              <Route path={'/posts/create'} to={'/signin'} />
+              }
+              {this.isLoggedIn &&
+              <Route path={match('/posts/:id')}  render={({ id }) => {
+                return <post-info id={id} ></post-info>
+              }} />
+              ||
+              <Route path={match('/posts/:id')} to={'/signin'} />
+              }
+          </Router.Switch>
         </main>
       </div>
     );
