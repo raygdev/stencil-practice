@@ -1,4 +1,4 @@
-import { Component, h, State, Prop, Fragment } from '@stencil/core'
+import { Component, h, State, Fragment } from '@stencil/core'
 import { createPost } from '../../api/posts/posts-service';
 import { href } from 'stencil-router-v2';
 
