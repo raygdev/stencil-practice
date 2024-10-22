@@ -1,0 +1,47 @@
+.container, .form-label, form {
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    min-height: 80vh;
+}
+
+.form-label {
+    gap: 1rem;
+}
+
+.form-label > textarea {
+    padding: .45rem .75rem;
+    border-radius: .25rem;
+    outline-width: .3rem;
+    outline-color: rgba(23, 84, 196, 0.412);
+    border: none;
+    border: 1px solid rgba(112, 128, 144, 0.397)
+}
+
+form {
+    width: 400px;
+    margin: auto;
+    gap: 1rem
+}
+
+.btn {
+    align-self: center;
+    border: none;
+    background-color: rgba(23, 83, 196, 0.8);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.349);
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.btn:disabled {
+background-color: rgba(23, 84, 196, 0.492);
+}
+
+.btn:active {
+box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.349);
+}
