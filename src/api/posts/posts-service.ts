@@ -12,7 +12,7 @@ export interface IPost {
 const BASE_URL = 'http://localhost:8080/api'
 
 export const createPost = async (post: { note: string }): Promise<IPost> => {
-    const res = await fetch(`${BASE_URL}/posts/create`, {
+    const res = await fetch(`${BASE_URL}/posts/new`, {
         method:"POST",
         headers: {
             'Content-Type': "application/json",
